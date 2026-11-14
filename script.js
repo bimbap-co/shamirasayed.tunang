@@ -1,35 +1,24 @@
 const motion = window.matchMedia("(prefers-reduced-motion: no-preference)");
 
-const musicFrame = document.querySelector("#engagement-music");
-const musicDelay = new Promise((resolve) => window.setTimeout(resolve, 3000));
-const musicUrl = new URL("https://www.youtube.com/embed/wNBm_8YAHrY");
-musicUrl.search = new URLSearchParams({ enablejsapi: "1", playsinline: "1", origin: location.origin });
+const music = document.querySelector("#engagement-music");
+const musicToggle = document.querySelector("#music-toggle");
+music.volume = 0.15;
+musicToggle.hidden = false;
 
-window.onYouTubeIframeAPIReady = () => {
-  new YT.Player(musicFrame, {
-    events: {
-      onReady: ({ target }) => {
-        target.setVolume(15);
-        musicDelay.then(() => {
-          if (target.getPlayerState() !== YT.PlayerState.UNSTARTED) return;
-          const visibility = new IntersectionObserver(([entry]) => {
-            if (entry.intersectionRatio <= 0.5) return;
-            visibility.disconnect();
-            if (target.getPlayerState() === YT.PlayerState.UNSTARTED) target.playVideo();
-          }, { threshold: 0.51 });
-          visibility.observe(musicFrame);
-          // Keep manual playback or pause in control while the player is offscreen.
-          musicFrame.addEventListener("focus", () => visibility.disconnect(), { once: true });
-        });
-      },
-    },
+const playMusic = () => {
+  music.play().catch(() => {
+    // Audible autoplay may require an explicit press of the music button.
   });
 };
 
-musicFrame.src = musicUrl.href;
-const youtubeApi = document.createElement("script");
-youtubeApi.src = "https://www.youtube.com/iframe_api";
-document.head.append(youtubeApi);
+const musicTimer = window.setTimeout(playMusic, 3000);
+musicToggle.addEventListener("click", () => {
+  window.clearTimeout(musicTimer);
+  if (music.paused) playMusic();
+  else music.pause();
+});
+music.addEventListener("playing", () => { musicToggle.textContent = "Pause music"; });
+music.addEventListener("pause", () => { musicToggle.textContent = "Play music"; });
 
 const posterLink = document.querySelector("#view-poster");
 const posterDialog = document.querySelector("#poster-dialog");

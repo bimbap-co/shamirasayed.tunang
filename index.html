@@ -2,7 +2,7 @@
 <html lang="en-MY">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://www.youtube.com/iframe_api https://www.youtube.com/s/player/; style-src 'self'; img-src 'self'; font-src 'self'; frame-src https://www.youtube.com/embed/; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#faf7ef">
@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://bimbap-co.github.io/shamirasayed.tunang/">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
-  <script src="./script.js" defer></script>
+  <script src="./script.js?v=2" defer></script>
   <title>Shamira &amp; Sayed — Tunang</title>
 </head>
 <body id="top">
@@ -36,8 +36,8 @@
         </div>
         <a class="button primary" href="#venue">Get directions <span aria-hidden="true">↘</span></a>
         <div class="music">
-          <iframe id="engagement-music" title="Letter That Writing in the Wind — Lazypianist" width="320" height="200" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-          <a href="https://www.youtube.com/watch?v=wNBm_8YAHrY">Listen on YouTube</a>
+          <audio id="engagement-music" src="../shamirasayed.nikah/audio/wedding-acoustic.mp3" preload="none" loop></audio>
+          <button class="button" id="music-toggle" type="button" hidden>Play music</button>
         </div>
       </div>
       <figure class="hero-photo">
