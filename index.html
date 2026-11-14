@@ -2,7 +2,7 @@
 <html lang="en-MY">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://www.youtube.com/iframe_api https://www.youtube.com/s/player/; style-src 'self'; img-src 'self'; font-src 'self'; frame-src https://www.youtube.com/embed/; base-uri 'none'; form-action 'none'">
   <meta name="referrer" content="no-referrer">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#faf7ef">
@@ -35,6 +35,10 @@
           <p>Gastrohub Event Space, Nilai</p>
         </div>
         <a class="button primary" href="#venue">Get directions <span aria-hidden="true">↘</span></a>
+        <div class="music">
+          <iframe id="engagement-music" title="Letter That Writing in the Wind — Lazypianist" width="320" height="200" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <a href="https://www.youtube.com/watch?v=wNBm_8YAHrY">Listen on YouTube</a>
+        </div>
       </div>
       <figure class="hero-photo">
         <img src="./assets/engagement-placeholder.webp" width="810" height="1080" alt="The couple smiling together at a café table">

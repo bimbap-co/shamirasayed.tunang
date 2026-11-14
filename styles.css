@@ -107,6 +107,9 @@ h1 em { color: var(--rose); }
 .primary { background: var(--green); color: #fffaf1; }
 .primary:hover { background: #2d3625; }
 .hero-photo { margin: 0; }
+.music { margin-top: 1.25rem; }
+.music iframe { display: block; width: min(100%, 320px); border: 0; }
+.music a { display: inline-block; padding-block: .5rem; font-size: .875rem; }
 .hero-photo img {
   display: block;
   width: 100%;
