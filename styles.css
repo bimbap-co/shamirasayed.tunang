@@ -149,6 +149,30 @@ h3 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; }
 .footer p { font: 1.55rem var(--serif); }
 .footer a { gap: .4em; }
 
+.layout-plan { display: block; width: min(100%, 36rem); }
+.layout-plan img { display: block; width: 100%; height: auto; }
+.seating { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 1rem; }
+.seating caption { text-align: left; padding-bottom: .75rem; }
+.seating th, .seating td { text-align: left; vertical-align: top; padding: .55rem .5rem; border-bottom: 1px solid var(--line); }
+.seating th:first-child { background: #e3e7d7; color: #39442e; }
+.seating th:last-child { background: #f1dcdf; color: #6c3842; }
+.seating small { display: block; color: var(--muted); }
+.crew { border-top: 0; }
+.crew h1 { font-size: clamp(3.75rem, 9vw, 7rem); }
+.crew-list { margin-top: 2rem; border-top: 1px solid var(--line); }
+.crew-list details { border-bottom: 1px solid var(--line); }
+.crew-list summary { padding: .85rem .25rem; cursor: pointer; }
+.crew-list summary:focus-visible { outline: 2px solid var(--rose); outline-offset: 2px; }
+.crew-list summary > span { display: inline-grid; vertical-align: middle; gap: .2rem; }
+.crew-name, .crew-list ul { color: var(--muted); }
+.crew-list ul { margin: 0 0 1rem; padding-inline-start: 2.5rem; }
+.crew-list li + li { margin-top: .35rem; }
+.crew-timing { max-width: 48rem; margin-top: 3rem; }
+.crew-timing h2 { font-size: clamp(2.5rem, 5vw, 4rem); }
+.crew-timing .programme { margin-top: 1rem; }
+.crew-timing .programme li { grid-template-columns: 6rem minmax(0, 1fr); }
+.crew-timing .programme p { margin: .25rem 0 0; color: var(--muted); }
+
 #poster-dialog {
   width: min(100% - 2rem, 38rem);
   max-height: calc(100% - 2rem);
